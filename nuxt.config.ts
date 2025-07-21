@@ -17,6 +17,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false, componentInspector: false },
 
   app: {
+    baseURL: '/cdata/',
     head: {
       bodyAttrs: {
         class: 'datagouv-components',
@@ -36,7 +37,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'https://www.data.gouv.fr',
+    url: 'http://udata.local/cdata/',
     name: 'data.gouv.fr',
   },
 
@@ -54,8 +55,10 @@ export default defineNuxtConfig({
       commitId: undefined,
       banner: undefined,
 
-      apiBase: 'http://dev.local:7000',
-      frontBase: 'http://dev.local:3000',
+      // apiBase: 'http://localhost:7000',
+      // frontBase: 'http://localhost:3000',
+      apiBase: 'http://udata.local/udata/',
+      frontBase: 'http://udata.local/cdata/',
       staticUrl: 'https://static.data.gouv.fr/static/',
       devApiKey: undefined,
 
@@ -177,13 +180,14 @@ export default defineNuxtConfig({
     '/*/posts/**': { ssr: true },
     // Admin dashboard renders only on server-side
     '/*/admin/**': { ssr: true },
+
   },
 
   sourcemap: { client: 'hidden' },
 
   devServer: {
     port: 3000,
-    host: 'dev.local',
+    host: '0.0.0.0',
   },
 
   features: {
@@ -206,7 +210,7 @@ export default defineNuxtConfig({
     },
     plugins: [toml(), tailwindcss()],
     server: {
-      allowedHosts: ['dev.local'],
+      allowedHosts: ['udata.local'],
     },
   },
 
@@ -219,7 +223,7 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
-    baseUrl: '',
+    baseUrl: '/cdata/',
     locales: [
       {
         code: 'fr',
