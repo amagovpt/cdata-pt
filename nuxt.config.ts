@@ -36,7 +36,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'http://udata.local:3000',
+    url: 'http://dev.local:3000',
     name: 'data.gouv.fr',
   },
 
@@ -54,8 +54,8 @@ export default defineNuxtConfig({
       commitId: undefined,
       banner: undefined,
 
-      apiBase: 'http://udata.local:7000',
-      frontBase: 'http://udata.local:3000',
+      apiBase: 'http://dev.local:7000',
+      frontBase: 'http://dev.local:3000',
       staticUrl: 'https://static.data.gouv.fr/static/',
       devApiKey: undefined,
 
@@ -183,7 +183,7 @@ export default defineNuxtConfig({
 
   devServer: {
     port: 3000,
-    host: 'udata.local',
+    host: 'dev.local',
   },
 
   features: {
@@ -206,7 +206,7 @@ export default defineNuxtConfig({
     },
     plugins: [toml(), tailwindcss()],
     server: {
-      allowedHosts: ['udata.local'],
+      allowedHosts: ['dev.local'],
     },
   },
 
